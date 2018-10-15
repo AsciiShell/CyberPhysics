@@ -8,3 +8,9 @@
 *.gz
 
 *.out
+
+*.net
+
+*.raw
+
+*.fft
