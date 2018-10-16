@@ -1,0 +1,90 @@
+%!TEX TS-program = xelatex
+
+% Шаблон документа LaTeX создан в 2018 году
+% Алексеем Подчезерцевым
+% В качестве исходных использованы шаблоны
+% 	Данилом Фёдоровых (danil@fedorovykh.ru) 
+%		https://www.writelatex.com/coursera/latex/5.2.2
+%	LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+%		https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+
+\documentclass[a4paper,14pt]{article}
+
+\input{data/preambular.tex}
+\begin{document} % конец преамбулы, начало документа
+\input{data/title.tex}
+
+\section{Переходные процессы в RLC цепях}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{scema.jpg}
+	\caption{Схема RLC цепи}	
+\end{figure}
+
+\pagebreak
+\section{L=10мГн, C=100нФ}
+
+%%% 1
+
+$R_{kr} = 2 * \sqrt{\dfrac{L}{C}} = 632.45$ Ом
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{1_100.png}
+	\includegraphics[width=\linewidth]{sp1_100.png}
+	\caption{$R < R_{kr}$}	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{1_700.png}
+	\includegraphics[width=\linewidth]{sp1_700.png}
+	\caption{$R > R_{kr}$}	
+\end{figure}
+
+\pagebreak
+\section{L=10мГн, C=22нФ}
+
+%%% 2
+
+$R_{kr} = 2 * \sqrt{\dfrac{L}{C}} = 1348.40$ Ом
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{2_100.png}
+	\includegraphics[width=\linewidth]{sp2_100.png}
+	\caption{$R < R_{kr}$}	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{2_1400.png}
+	\includegraphics[width=\linewidth]{sp2_1400.png}
+	\caption{$R > R_{kr}$}	
+\end{figure}
+
+\pagebreak
+\section{L=1мГн, C=22нФ}
+
+%%% 3
+
+$R_{kr} = 2 * \sqrt{\dfrac{L}{C}} = 200$ Ом
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{3_100.png}
+	\includegraphics[width=\linewidth]{sp3_100.png}
+	\caption{$R < R_{kr}$}	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{3_2100.png}
+	\includegraphics[width=\linewidth]{sp3_2100.png}
+	\caption{$R > R_{kr}$}	
+\end{figure}
+
+
+\end{document} % конец документа
+
