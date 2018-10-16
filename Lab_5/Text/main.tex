@@ -22,14 +22,6 @@ $L = 10$ мГн
 
 $$\nu_r = \dfrac{1}{2*\pi * \sqrt{L*C}} =\dfrac{1}{2*\pi* \sqrt{10 * 10^{-3}*0.1*10^{-6}}} = 5032.92121045 \approx 5000 $$
 
-\subsection{1}
-$R_1 = 50$ Ом 
-
-$C =  0.1$ мкФ 
-
-$L = 10$ мГн
-
-$R_L = 28$ Ом
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{shem.png}
@@ -37,7 +29,16 @@ $R_L = 28$ Ом
 \end{figure}
 
 
-\subsection{модуляция процесса в программе SPICE}
+\subsection{1 случай}
+$R_1 = 50$ Ом 
+
+$C =  0.1$ мкФ 
+
+$L = 10$ мГн
+
+$R_L = 28$ Ом
+
+\subsubsection{модуляция процесса в программе SPICE}
 
 \begin{figure}[H]
 	\centering
@@ -56,91 +57,82 @@ $R_L = 28$ Ом
 	\caption{показания амперметра}	
 \end{figure}
 
+\subsubsection{построение графиков по измеренным данным}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{mat_3_V123.png}
+	\caption{показания вольтметров}	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{mat_1_i.png}
+	\caption{показания амперметра}	
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{mat_1_fi.png}
+		\caption{сдвиг фаз между током и напряжением}	
+	\end{figure}
+
+
+\subsection{2 случай}
+$R_1 = 200$ Ом 
+
+$C =  0.1$ мкФ 
+
+$L = 10$ мГн
+
+$R_L = 28$ Ом
+
+\subsubsection{модуляция процесса в программе SPICE}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{shem2.png}	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{graf_4_V123.png}
+	\caption{показания вольтметров}	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{graf_4_i.png}
+	\caption{показания амперметра}	
+\end{figure}
+
+\subsubsection{построение графиков по измеренным данным}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{mat_4_V123.png}
+	\caption{показания вольтметров}	
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{mat_2_i.png}
+	\caption{показания амперметра}	
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\linewidth]{mat_2_fi.png}
+	\caption{сдвиг фаз между током и напряжением}	
+\end{figure}
+
+
+\subsection{Контрольные вопросы}
+$$\nu_r = \dfrac{1}{2*\pi * \sqrt{L*C}}$$
+\begin{itemize}
+	\item При увеличении $C$ резонансная частота при РН уменьшается.
+	\item При увеличении $L$ резонансная частота при РН уменьшается.
+\end{itemize}
 \end{document} % конец документа
-
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{scema_RC.jpg}
-	\caption{Схема RC цепи}	
-\end{figure}
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{1.png}
-	\includegraphics[width=\linewidth]{graph1.png}
-	\caption{100 нФ, 100 Ом}	
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{2.png}
-	\includegraphics[width=\linewidth]{graph2.png}
-	\caption{100 нФ, 100 Ом}	
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{3.png}
-	\includegraphics[width=\linewidth]{graph3.png}
-	\caption{22 нФ, 400 Ом}	
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{4.png}
-	\includegraphics[width=\linewidth]{graph4.png}
-	\caption{22 нФ, 50 Ом}	
-\end{figure}
-
-\subsection{Контрольные вопросы}
-\begin{itemize}
-	\item $1 - e^{-\dfrac{\tau}{\tau}} = 0.632$
-	\item $\tau = RC$. При увеличении емкости конденсатора длительность переходного процесса увеличивается.
-\end{itemize}
-
-
-\section{Переходные процессы в RL цепях}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\linewidth]{scema_RL.jpg}
-	\caption{Схема RL цепи}	
-\end{figure}
-
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{5.png}
-	\includegraphics[width=\linewidth]{graph5.png}
-	\caption{1 мГ, 100 Ом}	
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{6.png}
-	\includegraphics[width=\linewidth]{graph6.png}
-	\caption{1 мГ, 100 Ом}	
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{7.png}
-	\includegraphics[width=\linewidth]{graph7.png}
-	\caption{10 мГ, 100 Ом}	
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{8.png}
-	\includegraphics[width=\linewidth]{graph8.png}
-	\caption{10 мГ, 400 Ом}	
-\end{figure}
-
-\subsection{Контрольные вопросы}
-\begin{itemize}
-	\item $t \sim \tau.$ При увеличении $\tau$ длительность переходного процесса увеличивается.
-	\item $\tau = \dfrac{L}{R}$. При уменьшении индуктивности катушки длительность переходного процесса уменьшается.
-\end{itemize}
