@@ -167,6 +167,15 @@ Jс(Vзи) значение Vзи = Vпор разделяет два участ
 
 \section{Схемы измерений}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/Exp_scema}
+	\caption{Схема измерения сток-затворных и выходных ВАХ МОП-транзистора}
+	\label{fig:expscema}
+\end{figure}
+
+В первом случае измеряется $I_c$ от $V_{zi}$ при постоянном напряжении на стоке.
+Во втором случае измеряется $I_c$ от $V_{сi}$ при трех различных постоянных напряжении на затворе.
 \section{Результаты измерений}
 
 \begin{table}[H]
@@ -314,5 +323,35 @@ $$kp = \frac{\Delta I_{c1}}{\Delta V_{zi1} * 10 * V_{ci}} = 0.025625$$
 $$\lambda = \frac{2*\Delta I_{c2}}{\Delta V_{ci2} \times kp \times 10 \times (V_{zi} - V_{por})^2} = 0.07459$$ 
 
 \section{Схемы расчета ВАХ}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/scema_1}
+	\caption{Схема моделирования 1 эксперимента}
+	\label{fig:scema1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/scema_2}
+	\caption{Схема моделирования 2 эксперимента}
+	\label{fig:scema2}
+\end{figure}
+
 \section{Графики ВАХ}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/spice_1}
+	\caption{Результат моделирования 1 эксперимента}
+	\label{fig:spice1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/spice_2}
+	\caption{Результат моделирования 2 эксперимента}
+	\label{fig:spice2}
+\end{figure}
+
 \end{document} % конец документа
