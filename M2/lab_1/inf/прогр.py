@@ -12,3 +12,7 @@ def preobr(name):
     f.close()
     
     
+while 1:
+    s = input()
+    preobr(s)
+    print("OK")
