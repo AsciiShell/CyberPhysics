@@ -75,6 +75,12 @@
 \pagebreak
 
 \section{Схемы измерений}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/shema}
+	\caption{}
+	\label{fig:shema}
+\end{figure}
 
 \section{Таблицы с результатами измерений}
 \subsection{ Задание 1}
@@ -102,7 +108,7 @@
 
 \subsection{ Задание 2}
 
-\begin{table}[]
+\begin{table}[H]
 	\begin{tabular}{|c|c|c|c|c|c|}
 		\hline
 		\multicolumn{2}{|c|}{Iб = 30мкА} & \multicolumn{2}{c|}{Iб = 50мкА} & \multicolumn{2}{c|}{Iб = 70мкА} \\ \hline
@@ -130,7 +136,23 @@
 
 \section{Графики}
 
-\begin{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/graf11}
+	\caption{}
+	\label{fig:graf11}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/graf3}
+	\caption{}
+	\label{fig:graf3}
+\end{figure}
+
+
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{images/graf1}
 	\caption{}
@@ -138,21 +160,82 @@
 \end{figure}
 
 
+\section{ Ход и результаты вычисления предварительных значений параметров модели Гуммеля-Пуна по результатам измерений}
 
-\begin{figure}
+$$Rc = \dfrac{0.19}{7.32} * 10^{-3} = 2.596 * 10^{-5} = 259.6Om$$
+
+$$VAF = \dfrac{(3.1 - 0.29)}{4.2 - 3.39} * 3.39 - 0.29 = 12.05B$$ 
+ 
+$$I_{k1} = Is * (exp(\dfrac{U_{be1}}{ nf * fi}) - 1)$$
+
+$$I_{k2} = Is * (exp(\dfrac{U_{be2}}{ nf * fi}) - 1)$$
+
+$$U_{be1} = nf * 0.026 * ln(\dfrac{I_{k1}}{Is})$$
+
+$$U_{be2} = nf * 0.026 * ln(\dfrac{I_{k2}}{Is})$$
+
+$$58 * 10^{-2} = nf * 0.026* ln(\dfrac{400 * 10^{-3}}{Is})$$
+
+$$71 * 10^{-2} = nf * 0.026* ln(\dfrac{8420 * 10^{-3}}{Is})$$
+
+$$Is = 4.99 * 10^{10}$$
+
+$$nf = 1.64$$
+
+$$U_{be3} = nf * 0.026 * ln(\dfrac{I_{k3}}{Is} + 1) + I_{b1} * Rb$$
+
+$$Rb = 108 * 10^4$$
+
+$$Bf = max(\dfrac{I_{k3}}{I_b})$$
+
+Максимум находится при напряжении базы 0,71В
+
+$$Bf = \dfrac{8420}{855} = 12.85$$
+
+\section{Схемы для компьютерного расчета входных и выходных  ВАХ из программы моделирования}
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{images/graf2}
-	\caption{}
-	\label{fig:graf2}
+	\includegraphics[width=0.7\linewidth]{images/shema1}
+	\caption{Схема в LTSpice для расчета входных ВАХ}
+	\label{fig:shema1}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/shema2}
+	\caption{Схема в LTSpice для расчета выходных ВАХ}
+	\label{fig:shema2}
+\end{figure}
+
+\section{Графики входных и выходных ВАХ}
+
+\subsection{графики входных ВАХ}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/graf8}
+	\caption{Зависимость Ic}
+	\label{fig:graf8}
 \end{figure}
 
 
-\begin{figure}
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{images/graf3}
-	\caption{}
-	\label{fig:graf3}
+	\includegraphics[width=0.7\linewidth]{images/graf9}
+	\caption{Зависимость Ib}
+	\label{fig:graf9}
 \end{figure}
+
+\subsection{графики выходных ВАХ}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{images/graf10}
+	\caption{}
+	\label{fig:graf10}
+\end{figure}
+
+
 
 \end{document} % конец документа
 
