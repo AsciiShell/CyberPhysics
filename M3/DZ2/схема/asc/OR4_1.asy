@@ -2,7 +2,7 @@ Version 4
 SymbolType BLOCK
 LINE Normal 0 64 -80 64
 LINE Normal -81 -64 1 -64
-LINE Normal 96 -1 65 -1
+LINE Normal 96 0 65 0
 LINE Normal -128 16 -18 16
 LINE Normal -128 -16 -18 -16
 LINE Normal -16 -80 -16 -64
