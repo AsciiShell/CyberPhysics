@@ -17,5 +17,6 @@
 .param PSP={2 * (WP + Depth)}
 .param PDP={2 * (WP + Depth)}
 .param GenTmin=27n
+.param GenTopt=100n
 *
 *.endl

@@ -20,3 +20,5 @@
 **/-$*
 
 *.plt
+
+*.synctex(busy)
