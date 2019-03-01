@@ -5,12 +5,18 @@
 .param up=0.0136
 .param LChan=0.25u
 .param WtoL=8
+.param Depth=3.75u
 .param WN={{WtoL}*{LChan}}
 .param WP={((un)/(up))*(WtoL)*(LChan)}
-.param AS={WN * LChan}
-.param AD={WP * LChan}
-.param PS={2 * (WN + LChan)}
-.param PD={2 * (WP + LChan)}
+.param ASN={WN * Depth}
+.param ADN={ASN}
+.param ASP={WP * Depth}
+.param ADP={ASP}
+.param PSN={2 * (WN + Depth)}
+.param PDN={2 * (WN + Depth)}
+.param PSP={2 * (WP + Depth)}
+.param PDP={2 * (WP + Depth)}
 .param GenTmin=27n
+.param GenTopt=100n
 *
 *.endl
