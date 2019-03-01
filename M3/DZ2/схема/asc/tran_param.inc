@@ -1,5 +1,6 @@
 * ASCIISHELL params for transistors
 * change WP to balance schema 0.63u
+.param Vol=2.5 None=0.00000000001
 .param un=0.0317
 .param up=0.0136
 .param LChan=0.25u
