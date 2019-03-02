@@ -1,0 +1,346 @@
+%!TEX TS-program = xelatex
+
+% Шаблон документа LaTeX создан в 2018 году
+% Алексеем Подчезерцевым
+% В качестве исходных использованы шаблоны
+% 	Данилом Фёдоровых (danil@fedorovykh.ru) 
+%		https://www.writelatex.com/coursera/latex/5.2.2
+%	LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+%		https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+
+\documentclass[a4paper,14pt]{article}
+
+\input{data/preambular.tex}
+\begin{document} % конец преамбулы, начало документа
+\input{data/title.tex}
+\tableofcontents
+\pagebreak
+
+\section{Задание}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=0.4\linewidth]{image/schema_task}
+	\caption{Схема задания}\label{img:schema_task}
+\end{figure}
+
+\section{Параметры схемы}
+
+\begin{table}[H]	
+	\begin{center}
+	\begin{flushleft}
+		\tablecaption{Топологические и геометрические нормы}
+	\end{flushleft}
+	\begin{tabular}{|l|l|l|}
+
+		\hline
+		Δ        & Минимальный топологический размер, мкм                                               & 0.25     \\ \hline
+		& Минимальный размер стороны контактного окна                                          & 0.5Δ     \\ \hline
+		& Минимальный размер фигуры в слое металла                                             & 0.5Δ     \\ \hline
+		& Минимальное перекрытие металлом контактного окна                                     & 0.5Δ     \\ \hline
+		& Минимальное расстояние от границ контактного   & 0.5Δ     \\ 
+		& до границ контактируемой области   &     \\ \hline
+		& Минимальное расстояние между фигурами в слое металла                                 & 0.5Δ     \\ \hline
+		& Остальные топологические нормы                                                       & 0.5Δ     \\ \hline \hline
+		
+		$R_{sb}$         & Поверхностное сопротивление пассивной области базы, Ом                      & 300      \\ \hline
+		$R_{sbb}$        & Поверхностное сопротивление активной области базы, Ом                       & 3000     \\ \hline
+		$R_{se}$         & Поверхностное сопротивление области эмитера, Ом/□                           &     10     \\ \hline
+		$C_{middle}$     & Ёмкость межсоединения, пФ                                                   &      10    \\ \hline
+		$X_{jk}$         & глубина залегания p-n перехода базаколлектор, м                             & $1.1*10^{–6}$ \\ \hline
+		$X_{je}$         & глубина залегания p-n перехода базаэмиттер, м                               & $0.5*10^{–6}$ \\ \hline
+		$\omega_{epi}$   & толщина эпитаксиального слоя, м                                             & $4*10^{–6}  $ \\ \hline
+		$X_{jn}$         & толщина скрытого n+ слоя, м                                                 & $1.0*10^{–6}$ \\ \hline
+		$C_{pn0}$        & удельная ёмкость p-n-перехода, Ф/м2                                         & $3*10^{–3}  $ \\ \hline
+		\hline
+		
+		Vdd      & Напряжение питания, В                                                       & $2.5     $ \\ \hline
+		Смеж     & Ёмкость межсоединения, пФ                                                   & 10 \\ \hline
+		tox      & Толщина подзатворного оксида, нм                                            & $6       $ \\ \hline
+		μn       & Подвижность электронов, м2/(Вс)                                             & $0.0317  $ \\ \hline
+		μp       & Подвижность дырок, м2/(Вс)                                                  & $0.0136  $ \\ \hline
+		dпер     & Перекрытие затвором областей стока/истока, мкм                              & 0.1Δ    \\ \hline
+		xj       & Глубина залегания p-n перехода нм                                           & 100 \\ 
+		& исток-подложка и сток-подложка                                              & \\ \hline
+		L        & длина канала, м                                                             & 1.0Δ     \\ \hline
+	\end{tabular}
+	\end{center}
+\end{table}
+
+
+\section{Работа транзисторов}
+
+Рассмотрим 27 набор данных, который соответствует следующей бинарной последовательности: $0	0	0	1	1	0	1	1$. При подаче такого сигнала на схему на каждый элемент $AND$ будут поданы разные значения. Рассмотрим их.
+
+\subsection{Первый элемент $AND$}
+
+Элемент $AND$ изображён на \imref{img:schema_and}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/schema_and}
+	\caption{Схема элемента И}\label{img:schema_and}
+\end{figure}
+
+На вход подаются значения $00$, транзисторы М1 и М2 остаются открытыми, а М3 и М4 закрытыми, на инвентор подаётся логическая 1, транзистор М6 закрыт, а М5 открыт, на выходе схемы получаем 0.
+
+\subsection{Второй элемент $AND$}
+
+На вход подаются значения $01$, транзисторы М1 и М4 остаются открытыми, а М3 и М2 закрытыми, на инвентор подаётся логическая 1, транзистор М6 закрыт, а М5 открыт, на выходе схемы получаем 0.
+
+\subsection{Третий элемент $AND$}
+
+На вход подаются значения $10$, транзисторы М2 и М3 остаются открытыми, а М1 и М4 закрытыми, на инвентор подаётся логическая 1, транзистор М6 закрыт, а М5 открыт, на выходе схемы получаем 0.
+
+\subsection{Четвёртый элемент $AND$}
+
+На вход подаются значения $11$, транзисторы М3 и М4 остаются открытыми, а М1 и М2 закрытыми, на инвентор подаётся логический 0, транзистор М6 открыт, а М5 закрыт, на выходе схемы получаем 1.
+
+\subsection{Элемент $OR4$}
+
+Элемент $OR4$ изображён на \imref{img:schema_or}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/schema_or}
+	\caption{Схема элемента 4-ИЛИ}\label{img:schema_or}
+\end{figure}
+
+На вход подаются значения $0001$, транзисторы М1, М2, М3 и М5 остаются открытыми, а М4, М6, М7 и М8	 закрытыми, на инвентор подаётся логический 0, транзистор М9 открыт, а М10 закрыт, на выходе схемы получаем 1.
+
+\section{Расчёт параметров схемы}
+
+Для удобства проектирования схемы в LTSpice были созданы переменные, некоторые из которых зависят от исходных
+
+$ Vol = 2.5V  $ -- Напряжение питания
+
+$ un = 0.0317 $ -- Подвижность электронов
+
+$ up = 0.0136 $ -- Подвижность дырок
+
+$ LChan=0.25u $ -- Длина канала
+
+$ WtoL=8 $ -- Выбор отношения ширины канала к длине
+
+$ Depth=3.75u $ -- Глубина канала по построению
+
+$ WN=WtoL * LChan $ -- Ширина канала для NMOPT
+
+$ WP= \frac{un}{up} * WtoL* LChan $ -- Ширина канала для PMOPT
+
+$ ASN=WN * Depth $ -- Площадь стока для NMOPT
+
+$ ADN= ASN $-- Площадь истока для NMOPT
+
+$ ASP=WP * Depth$ -- Площадь стока для PMOPT
+
+$ ADP=ASP $ -- Площадь стока для PMOPT
+
+$ PSN=2 * WN + Depth $ -- Периметр истока для NMOPT
+
+$ PDN=2 * WN + Depth $ -- Периметр стока для NMOPT
+
+$ PSP=2 * WP + Depth $ -- Периметр истока для PMOPT
+
+$ PDP=2 * WP + Depth $ -- Периметр стока для PMOPT
+
+
+\section{Разрезы структур}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/slice_serial}
+	\caption{Срез последовательного соединённых 4 p-канальных транзисторов}\label{img:slice_serial}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/slice_parallel}
+	\caption{Срез параллельно соединённых 2 p-канальных транзисторов}\label{img:slice_parallel}
+\end{figure}
+
+\section{Расчеты LTSpice}
+
+Схемы элементов представлены на \imref{img:schema_and} и \imref{img:schema_or}
+
+\subsection{Таблица истинности}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/schema_all}
+	\caption{Схема для проверки таблицы истинности}\label{img:schema_all}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/spice_and_bin}
+	\caption{Таблица истинности для элемента И}\label{img:spice_and_bin}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/spice_or_bin}
+	\caption{Таблица истинности для элемента-ИЛИ }\label{img:spice_or_bin}
+\end{figure}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/spice_bin}
+	\caption{Таблица истинности всей схемы}\label{img:spice_bin}
+\end{figure}
+
+\subsection{Анализ статических характеристик}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/dc_schema}
+	\caption{Схема для расчёта статических характеристик}\label{img:dc_schema}
+\end{figure}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/dc_V_01}
+	\caption{Передаточная характеристика схемы}\label{img:dc_V_01}
+\end{figure}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/dc_V}
+	\caption{Увеличенная область перехода}\label{img:dc_V}
+\end{figure}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/dc_I}
+	\caption{Потребляемый ток включённой и выключенной схемы}\label{img:dc_I}
+\end{figure}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/dc_I_avg}
+	\caption{Средний ток}\label{img:dc_I_avg}
+\end{figure}
+
+Данные измерений и расчётов:
+
+$U_{log}^0 = 12 nV \approx 0$
+
+$U_{log}^1 = 2.5 V$
+
+$U_{log} = 2.5 V$
+
+$I_0 \approx 0 A $
+
+$I_1 \approx 0 A $
+
+$I_{avg} = -74 mkA $
+
+$V_p^0 = 1.2857V$
+
+$V_p^1 = 1.2871V$
+
+$U_{err}^{+} = 1.2857V - 12nV \approx 1.29V $
+
+$U_{err}^{-} = 2.5V - 1.2871 \approx 1.21V $
+
+$P_{static} = \frac{2.5V \times (0 + 0)}{2} = 0$
+
+\subsection{Анализ динамических характеристик}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_shema_min}
+	\caption{Схема расчета динамических характеристик}
+	\label{fig:dynshema}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_max_freq}
+	\caption{}
+	\label{fig:dyn_max_freq}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_max_volt}
+	\caption{}
+	\label{fig:dyn_max_volt}
+\end{figure}
+
+$$T(f_{max}) = 27ns$$
+$$f_{max} = \dfrac{1}{T_{max}} \approx 37.037 MHz$$
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_shema_opt}
+	\caption{}
+	\label{fig:dynshemamin}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_opt_zad01}
+	\caption{}
+	\label{fig:dynoptzad01}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_opt_zad10}
+	\caption{}
+	\label{fig:dynoptzad10}
+\end{figure}
+
+$$t_{z}^{01} = 12ns$$
+$$t_{z}^{10} = 14ns$$
+$$t_{z} = \dfrac{t_{z}^{01} + t_{z}^{10}}{2} = 13ns$$
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_opt_f01}
+	\caption{}
+	\label{fig:dynoptf01}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_opt_f10}
+	\caption{}
+	\label{fig:dynoptf10}
+\end{figure}
+
+$$t_{f}^{01} = 25ns$$
+$$t_{f}^{10} = 21ns$$
+$$f_{P} = \dfrac{1}{T} = \dfrac{1}{100ns} = 10 MHz$$
+$$C_P = (CGSO_n + CGDO_n)*N_n + (CGSO_p + CGDO_p)*N_p + C_mej =$$ $$= (3.11 * 10^{-10} + 3.11 * 10^{-10}) * 17 + (2.68  * 10^{-10} + 2.68  * 10^{-10}) * 17  + 10 * 10^{-12}=$$
+$$ =196,96*10 ^{-10}F$$
+$$E_{pit} = 2.5V$$
+$$P_D = C_P * E_{pit}^2 * f_P = 1.231W$$
+
+
+
+
+\section{Топология}
+
+\begin{landscape}
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/ledit_schema}
+	\caption{Топология}\label{img:ledit_schema}
+\end{figure}
+\end{landscape}
+
+\section{Вывод}
+
+В ходе работы была смоделирована логическая схема, состоящая из 4 элементов <<И>> и элемента <<4-ИЛИ>>.
+Схема была реализована в КМОПТ базисе, сначала создавался элемент <<И-НЕ>>, после чего к нему добавлялся инвентор.
+Аналогичным образом конструировался элемент <<ИЛИ>>.
+По результатам моделирования в программе LTSPICE схема имеет практически симметричную помехозащищенность, относится к классу среднего быстродействия и высокой потребляемой мощности.
+В программе LEdit была смоделирована топология всей микросхемы.
+
+\end{document} % конец документа

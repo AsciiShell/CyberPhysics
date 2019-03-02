@@ -18,3 +18,7 @@
 *.toc
 
 **/-$*
+
+*.plt
+
+*.synctex(busy)
