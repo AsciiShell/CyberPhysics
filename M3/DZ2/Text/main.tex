@@ -184,59 +184,78 @@ $ PDP=2 * WP + Depth $ -- Периметр стока для PMOPT
 
 \subsection{Анализ статических характеристик}
 
+\subsection{Анализ динамических характеристик}
+
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/dc_schema}
-	\caption{Схема для расчёта статических характеристик}\label{img:dc_schema}
+	\centering
+	\includegraphics[width=0.7\linewidth]{image/dyn_shema_min}
+	\caption{Схема расчета динамических характеристик}
+	\label{fig:dynshema}
 \end{figure}
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/dc_V_01}
-	\caption{Передаточная характеристика схемы}\label{img:dc_V_01}
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_max_freq}
+	\caption{}
+	\label{fig:dyn_max_freq}
 \end{figure}
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/dc_V}
-	\caption{Увеличенная область перехода}\label{img:dc_V}
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_max_volt}
+	\caption{}
+	\label{fig:dyn_max_volt}
+\end{figure}
+
+$$T(f_{max}) = 27ns$$
+$$f_{max} = \dfrac{1}{T_{max}} \approx 37.037 MHz$$
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{image/dyn_shema_opt}
+	\caption{}
+	\label{fig:dynshemamin}
 \end{figure}
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/dc_I}
-	\caption{Потребляемый ток включённой и выключенной схемы}\label{img:dc_I}
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_opt_zad01}
+	\caption{}
+	\label{fig:dynoptzad01}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_opt_zad10}
+	\caption{}
+	\label{fig:dynoptzad10}
+\end{figure}
+
+$$t_{z}^{01} = 12ns$$
+$$t_{z}^{10} = 14ns$$
+$$t_{z} = \dfrac{t_{z}^{01} + t_{z}^{10}}{2} = 13ns$$
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_opt_f01}
+	\caption{}
+	\label{fig:dynoptf01}
 \end{figure}
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/dc_I_avg}
-	\caption{Средний ток}\label{img:dc_I_avg}
+	\centering
+	\includegraphics[width=\linewidth]{image/dyn_opt_f10}
+	\caption{}
+	\label{fig:dynoptf10}
 \end{figure}
 
-Данные измерений и расчётов:
+$$$t_{f}^{01} = 25ns$
+$$$t_{f}^{10} = 21ns$
+$$f_{p} = \dfrac{1}{T} = $$
 
-$U_{log}^0 = 12 nV \approx 0$
 
-$U_{log}^1 = 2.5 V$
 
-$U_{log} = 2.5 V$
-
-$I_0 \approx 0 A $
-
-$I_1 \approx 0 A $
-
-$I_{avg} = -74 mkA $
-
-$V_p^0 = 1.2857V$
-
-$V_p^1 = 1.2871V$
-
-$U_{err}^{+} = 1.2857V - 12nV \approx 1.29V $
-
-$U_{err}^{-} = 2.5V - 1.2871 \approx 1.21V $
-
-$P_{static} = \frac{2.5V \times (0 + 0)}{2} = 0$
 
 \section{Топология}
 
