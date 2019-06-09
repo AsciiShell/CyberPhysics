@@ -145,9 +145,51 @@
 	\caption{Блок-схема Outlier test. Очистка выборки}\label{img:ot_schema_remove}
 \end{figure}
 \subsection{ПОЛУЧЕНИЕ, ОБРАБОТКА И ПРЕДСТАВЛЕНИЕ РЕЗУЛЬТАТОВ ПРЯМЫХ МНОГОКРАТНЫХ ИЗМЕРЕНИЙ}
- mult\_process.vi (ЛР 7) 
- 
- 
+
+Данная VI (Рис. \ref{img:mp_vi}) позволяет производить анализ множественных измерений.
+Исходные данные извлекаются из файла, затем с помощью кнопок управления совершаются соответствующие действия.
+Для контроля обработки вручную задаются доверительный интервал и границы неисключенной систематической погрешности.
+Итоговый результат записывается в таблицу <<Результат измерений>>, а так же выводится в соответствующее поле с учетом погрешности и строки форматирования.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{image/mp_vi}
+    \caption{Передняя панель multiple measurements}\label{img:mp_vi}
+\end{figure}
+
+На блок-схеме изображен процесс обработки данных (Рис. \ref{img:mp_schema}).
+Сначала данные считываются из файла  (Рис. \ref{img:mp_schema_scan}), затем передаются на стадию вычисления оценок.
+На этой стадии рассчитываются среднее, СКО,  ошибку  (Рис. \ref{img:mp_schema_calc_score}), записываются в структуру и передаются далее.
+После вычисляется доверительный интервал по критерию Стьюдента с учетом уровня значимости и полученных ранее величин (Рис. \ref{img:mp_schema_calc_D}), данные записываются и передаются далее.
+На последнем этапе информация форматируется с использованием строки форматирования и выводится на экран результат измерения с учетом погрешности  (Рис. \ref{img:mp_schema_write}).
+
+\begin{figure}[H]
+     \centering
+     \includegraphics[width=\linewidth]{image/mp_schema}
+    \caption{Блок-схема multiple measurements}\label{img:mp_schema}
+\end{figure}
+
+  \begin{figure}[H]
+     \centering
+     \includegraphics[width=0.7\linewidth]{image/mp_schema_0}
+     \caption{Блок-схема multiple measurements. Получение данных}\label{img:mp_schema_scan}
+ \end{figure}
+
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{image/mp_schema_1}
+    \caption{Блок-схема multiple measurements. Вычисление оценки}\label{img:mp_schema_calc_score}
+\end{figure}
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{image/mp_schema_2}
+    \caption{Блок-схема multiple measurements. Вычисление доверительного интервала}\label{img:mp_schema_calc_D}
+\end{figure}
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{image/mp_schema_3}
+    \caption{Блок-схема multiple measurements. Запись результата}\label{img:mp_schema_write}
+\end{figure}
 \section{ПОРЯДОК ВЫПОЛНЕНИЯ РАБОТЫ}
 \begin{enumerate}
 \item 	Построение ВП для сбора и визуализации данных на основе Express-VI DAQ Assistant.
