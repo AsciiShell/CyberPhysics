@@ -3,10 +3,10 @@
 % Шаблон документа LaTeX создан в 2018 году
 % Алексеем Подчезерцевым
 % В качестве исходных использованы шаблоны
-% 	Данилом Фёдоровых (danil@fedorovykh.ru) 
-%		https://www.writelatex.com/coursera/latex/5.2.2
-%	LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
-%		https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
+%     Данилом Фёдоровых (danil@fedorovykh.ru)
+%        https://www.writelatex.com/coursera/latex/5.2.2
+%    LaTeX-шаблон для русской кандидатской диссертации и её автореферата.
+%        https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template
 
 \documentclass[a4paper,14pt]{article}
 
@@ -20,23 +20,23 @@
 Целями данной работы являются:
 
 \begin{itemize}
-	\item получение навыков получения, обработки и представления результатов многократных измерений;
-	\item формирование базовых навыков работы в среде NI LabVIEW по раз-работке компонентов для автоматизированной обработки результатов однократных измерений.
+    \item получение навыков получения, обработки и представления результатов многократных измерений;
+    \item формирование базовых навыков работы в среде NI LabVIEW по раз-работке компонентов для автоматизированной обработки результатов однократных измерений.
 \end{itemize}
 
 \section{ПРИМЕНЯЕМОЕ ОБОРУДОВАНИЕ И ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ}
 
 \begin{enumerate}
-	\item	Персональный компьютер (ПК).
-	\item	Плата сбора данных NI-DAQ M-series PCI-6221/6251.
-	\item	Кабель NI SH68-68-EPM Shielded Cable.
-	\item	Коннекторный блок NI BNC 2120 
-	\item	Провод соединительный коаксиальный (BNC-BNC).
-	\item	Среда разработки NI LabVIEW 2013 Professional.
+    \item    Персональный компьютер (ПК).
+    \item    Плата сбора данных NI-DAQ M-series PCI-6221/6251.
+    \item    Кабель NI SH68-68-EPM Shielded Cable.
+    \item    Коннекторный блок NI BNC 2120
+    \item    Провод соединительный коаксиальный (BNC-BNC).
+    \item    Среда разработки NI LabVIEW 2013 Professional.
 \end{enumerate}
 
 
-\section{СТРУКТУРА ПРИКЛАДНОГО 	ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ}
+\section{СТРУКТУРА ПРИКЛАДНОГО     ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ}
 \subsection{Виртуальный прибор сбора и визуализации данных}
 
 Прибор, изображенный на Рис. \ref{img:av_vi} позволяет измерять напряжение на некотором элемента.
@@ -49,16 +49,16 @@
 В конечном счёте пользователь получает два графика -- текущее значение, которое отмечено точками, и усредненное в процессе измерения, обозначенное красной линией.
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/av_vi}
-	\caption{Передняя панель Acquire Voltage}\label{img:av_vi}
+    \centering
+    \includegraphics[width=\linewidth]{image/av_vi}
+    \caption{Передняя панель Acquire Voltage}\label{img:av_vi}
 \end{figure}
 
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/av_schema}
-	\caption{Блок-схема Acquire Voltage}\label{img:av_schema}
+    \centering
+    \includegraphics[width=\linewidth]{image/av_schema}
+    \caption{Блок-схема Acquire Voltage}\label{img:av_schema}
 \end{figure}
 
 \subsection{Виртуальный прибор выполнения многократных измерений }
@@ -71,9 +71,9 @@
 Кроме того, часть измерений выводится напрямую на экран в элемент <<Voltage array>>.
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/vmm_vi}
-	\caption{Передняя панель Voltage Multiple Measurements}\label{img:vmm_vi}
+    \centering
+    \includegraphics[width=\linewidth]{image/vmm_vi}
+    \caption{Передняя панель Voltage Multiple Measurements}\label{img:vmm_vi}
 \end{figure}
 
 Под капотом данной VI находится блок схема, представленная на Рис. \ref{img:vmm_schema}.
@@ -82,9 +82,9 @@
 Кроме того, если был выбран пункт сохранения в файл, производится запись с точностью до 5 знаков после запятой.
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/vmm_schema}
-	\caption{Блок-схема Voltage Multiple Measurements}\label{img:vmm_schema}
+    \centering
+    \includegraphics[width=\linewidth]{image/vmm_schema}
+    \caption{Блок-схема Voltage Multiple Measurements}\label{img:vmm_schema}
 \end{figure}
 
 \subsection{ПРОВЕРКА РЕЗУЛЬТАТОВ ИЗМЕРЕНИЙ НА НАЛИЧИЕ ПРОМАХОВ ПО КРИТЕРИЮ ГРАББСА}
@@ -95,9 +95,9 @@
 Кроме того, в поле <<Array>> попадают значения, отфильтрованные критерием; заполняются поля среднего значения и СКО.
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/ot_vi}
-	\caption{Передняя панель Outlier test}\label{img:ot_vi}
+    \centering
+    \includegraphics[width=\linewidth]{image/ot_vi}
+    \caption{Передняя панель Outlier test}\label{img:ot_vi}
 \end{figure}
 
 На рис. \ref{img:ot_schema} представлена блок-схема соответствующей VI.
@@ -106,44 +106,45 @@
 На рис. \ref{img:ot_schema_grubbs} представлен расчет критерия Граббса.
 На рис. \ref{img:ot_schema_remove} представлена операция по очистке выборки от промахов.
 
-Обработка данных происходит следующим образом: данные загружаются из файла и выводятся на plot <<Исходная выборка>>. 
+Обработка данных происходит следующим образом: данные загружаются из файла и выводятся на plot <<Исходная выборка>>.
 Далее для данных вычисляется среднее и СКО, затем происходит нормировка и, если все значения удовлетворяют некоторому критерию, выводятся на plot <<Обработанные результаты>>.
 Если же есть выбросы, данные обрабатываются еще раз с шага вычисления метрик.
 Так происходит до тех пор, пока не будут удовлетворять критерию все данные, после чего вычисления прекращаются.
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=\linewidth]{image/ot_schema}
-	\caption{Блок-схема Outlier test}\label{img:ot_schema}
+    \centering
+    \includegraphics[width=\linewidth]{image/ot_schema}
+    \caption{Блок-схема Outlier test}\label{img:ot_schema}
 \end{figure}
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=0.5\linewidth]{image/ot_schema_init}
-	\caption{Блок-схема Outlier test. Инициализация}\label{img:ot_schema_init}
+    \centering
+    \includegraphics[width=0.5\linewidth]{image/ot_schema_init}
+    \caption{Блок-схема Outlier test. Инициализация}\label{img:ot_schema_init}
 \end{figure}
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=0.5\linewidth]{image/ot_schema_err}
-	\caption{Блок-схема Outlier test. Расчет ошибки}\label{img:ot_schema_err}
+    \centering
+    \includegraphics[width=0.5\linewidth]{image/ot_schema_err}
+    \caption{Блок-схема Outlier test. Расчет ошибки}\label{img:ot_schema_err}
 \end{figure}
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=0.5\linewidth]{image/ot_schema_stop}
-	\caption{Блок-схема Outlier test. Остановка}\label{img:ot_schema_stop}
+    \centering
+    \includegraphics[width=0.5\linewidth]{image/ot_schema_stop}
+    \caption{Блок-схема Outlier test. Остановка}\label{img:ot_schema_stop}
 \end{figure}
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=0.3\linewidth]{image/ot_schema_grubbs}
-	\caption{Блок-схема Outlier test. Проверка по критерию Граббса}\label{img:ot_schema_grubbs}
+    \centering
+    \includegraphics[width=0.3\linewidth]{image/ot_schema_grubbs}
+    \caption{Блок-схема Outlier test. Проверка по критерию Граббса}\label{img:ot_schema_grubbs}
 \end{figure}
 
 \begin{figure}[H]
-	\centering		
-	\includegraphics[width=0.3\linewidth]{image/ot_schema_remove}
-	\caption{Блок-схема Outlier test. Очистка выборки}\label{img:ot_schema_remove}
+    \centering
+    \includegraphics[width=0.3\linewidth]{image/ot_schema_remove}
+    \caption{Блок-схема Outlier test. Очистка выборки}\label{img:ot_schema_remove}
 \end{figure}
+
 \subsection{ПОЛУЧЕНИЕ, ОБРАБОТКА И ПРЕДСТАВЛЕНИЕ РЕЗУЛЬТАТОВ ПРЯМЫХ МНОГОКРАТНЫХ ИЗМЕРЕНИЙ}
 
 Данная VI (Рис. \ref{img:mp_vi}) позволяет производить анализ множественных измерений.
@@ -192,26 +193,26 @@
 \end{figure}
 \section{ПОРЯДОК ВЫПОЛНЕНИЯ РАБОТЫ}
 \begin{enumerate}
-\item 	Построение ВП для сбора и визуализации данных на основе Express-VI DAQ Assistant.
- Выполнение сбора и визуализации данных. 
- Исследование режимов отображения данных на диаграмме Waveform Chart. 
+\item     Построение ВП для сбора и визуализации данных на основе Express-VI DAQ Assistant.
+ Выполнение сбора и визуализации данных.
+ Исследование режимов отображения данных на диаграмме Waveform Chart.
  Экспорт измеренных значений (таблица 1).
-\item 	Построение ВП для выполнения и сохранения результатов многократных измерений.
+\item     Построение ВП для выполнения и сохранения результатов многократных измерений.
  Выполнение многократных измерений, сохранение полученных результатов (таблица 2).
-\item 	Построение ВП для проверки результатов измерений на наличие промахов. 
+\item     Построение ВП для проверки результатов измерений на наличие промахов.
 Проверка тестовой выборки (таблица 3.1), проверка результатов измерений (таблица  3.2).
-\item 	Построение ВП для обработки результатов многократных измерений. 
+\item     Построение ВП для обработки результатов многократных измерений.
 Обработка тестовой выборки (таблица 4.1), результатов измерений (таблица 4.2).
 \end{enumerate}
 
 \section{ РЕЗУЛЬТАТЫ ИЗМЕРЕНИЙ И ВЫЧИСЛЕНИЙ}
 
 \subsection{Результаты сбора данных}
-Таблица и график с результатами измерений, полученные с помо-щью Acquire Voltage.vi (ЛР 5). 
+Таблица и график с результатами измерений, полученные с помо-щью Acquire Voltage.vi (ЛР 5).
 Таблица 1
 \subsection{Результаты многократных измерений}
 
-Таблица с результатами измерений, полученных с помощью Voltage Multiple Measurements.vi (ЛР 6). Также записать максимальное, мини-мальное и среднее значения. 
+Таблица с результатами измерений, полученных с помощью Voltage Multiple Measurements.vi (ЛР 6). Также записать максимальное, мини-мальное и среднее значения.
 Таблица 2
 \subsection{Результаты проверки на промахи по критерию Граббса}
 
