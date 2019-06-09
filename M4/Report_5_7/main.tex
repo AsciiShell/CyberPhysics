@@ -87,9 +87,67 @@
 	\caption{Блок-схема Voltage Multiple Measurements}\label{img:vmm_schema}
 \end{figure}
 
-\subsection{Some text}
-Разделы с кратким описанием ВП Grubbs\_Test.vi или Outlier Test.vi (ЛР 6), mult\_process.vi (ЛР 7) со ссылками на рисунки передних панелей и блок-схем. Рисунки передних панелей и блок-схем. Можно приводить не все кейсы, а только те, на которых выполняется основная часть обработки. Описание не должно дублировать текст МУ 
+\subsection{ПРОВЕРКА РЕЗУЛЬТАТОВ ИЗМЕРЕНИЙ НА НАЛИЧИЕ ПРОМАХОВ ПО КРИТЕРИЮ ГРАББСА}
 
+Данная VI (Рис. \ref{img:ot_vi}))предназначена для обработки данных из файла.
+С помощью диалогового окна выбирается датасет с результатами некоторых измерений, устанавливается необходимый уровень значимости, который используется при вычислении по критерию Граббса, а так же устанавливается тип сравнения -- критерий Граббса или $3\sigma$.
+После выполнения расчетов на верхний график подается изображение исходной выборки, а на нижний -- хороших результатов, прошедших проверку.
+Кроме того, в поле <<Array>> попадают значения, отфильтрованные критерием; заполняются поля среднего значения и СКО.
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/ot_vi}
+	\caption{Передняя панель Outlier test}\label{img:ot_vi}
+\end{figure}
+
+На рис. \ref{img:ot_schema} представлена блок-схема соответствующей VI.
+В данном примере представлен шаг проверки на промахи по критерию $3\sigma$ при отсутствии ошибок.
+На рис. \ref{img:ot_schema_init}, \ref{img:ot_schema_err}, \ref{img:ot_schema_stop} представлены шаги инициализации, вычислении ошибок и остановки и являются простыми.
+На рис. \ref{img:ot_schema_grubbs} представлен расчет критерия Граббса.
+На рис. \ref{img:ot_schema_remove} представлена операция по очистке выборки от промахов.
+
+Обработка данных происходит следующим образом: данные загружаются из файла и выводятся на plot <<Исходная выборка>>. 
+Далее для данных вычисляется среднее и СКО, затем происходит нормировка и, если все значения удовлетворяют некоторому критерию, выводятся на plot <<Обработанные результаты>>.
+Если же есть выбросы, данные обрабатываются еще раз с шага вычисления метрик.
+Так происходит до тех пор, пока не будут удовлетворять критерию все данные, после чего вычисления прекращаются.
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=\linewidth]{image/ot_schema}
+	\caption{Блок-схема Outlier test}\label{img:ot_schema}
+\end{figure}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=0.5\linewidth]{image/ot_schema_init}
+	\caption{Блок-схема Outlier test. Инициализация}\label{img:ot_schema_init}
+\end{figure}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=0.5\linewidth]{image/ot_schema_err}
+	\caption{Блок-схема Outlier test. Расчет ошибки}\label{img:ot_schema_err}
+\end{figure}
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=0.5\linewidth]{image/ot_schema_stop}
+	\caption{Блок-схема Outlier test. Остановка}\label{img:ot_schema_stop}
+\end{figure}
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=0.3\linewidth]{image/ot_schema_grubbs}
+	\caption{Блок-схема Outlier test. Проверка по критерию Граббса}\label{img:ot_schema_grubbs}
+\end{figure}
+
+\begin{figure}[H]
+	\centering		
+	\includegraphics[width=0.3\linewidth]{image/ot_schema_remove}
+	\caption{Блок-схема Outlier test. Очистка выборки}\label{img:ot_schema_remove}
+\end{figure}
+\subsection{ПОЛУЧЕНИЕ, ОБРАБОТКА И ПРЕДСТАВЛЕНИЕ РЕЗУЛЬТАТОВ ПРЯМЫХ МНОГОКРАТНЫХ ИЗМЕРЕНИЙ}
+ mult\_process.vi (ЛР 7) 
+ 
+ 
 \section{ПОРЯДОК ВЫПОЛНЕНИЯ РАБОТЫ}
 \begin{enumerate}
 \item 	Построение ВП для сбора и визуализации данных на основе Express-VI DAQ Assistant.
