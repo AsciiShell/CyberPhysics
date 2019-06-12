@@ -39,19 +39,83 @@
 \section{СТРУКТУРА ПРИКЛАДНОГО     ПРОГРАММНОГО ОБЕСПЕЧЕНИЯ}
 \subsection{ВП сбора и обработки данных}
 
-%ВП Data acquisition and analysis.vi (ЛР 08, упр. 2)
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/daa_vi}
+	\caption{Передняя панель Data acquisition and analysis}\label{img:daa_vi}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/daa_schema}
+	\caption{Блок-схема Data acquisition and analysis}\label{img:daa_schema}
+\end{figure}
 
 \subsection{ВП протоколирования результатов}
 
-%Get and Write Data.vi (ЛР 08, упр. 3) 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/daa_scaner_vi}
+	\caption{Передняя панель протоколирования для Data acquisition and analysis}\label{img:daa_scaner_vi}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/daa_scaner_schema}
+	\caption{Блок-схема протоколирования для Data acquisition and analysis}\label{img:daa_scaner_schema}
+\end{figure}
 
 \subsection{ВП измерения частоты и периода}
 
-%DAQ Frequency Meter.vi (ЛР 09)
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dfm_freq_vi}
+	\caption{Передняя панель DAQ Frequency Meter с измерением частоты}\label{img:dfm_freq_vi}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dfm_period_vi}
+	\caption{Передняя панель DAQ Frequency Meter с измерением периода}\label{img:dfm_period_vi}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dfm_schema}
+	\caption{Блок-схема DAQ Frequency Meter}\label{img:dfm_schema}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dfm_schema_init}
+	\caption{Блок-схема DAQ Frequency Meter. Инициализация}\label{img:dfm_schema_init}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{image/dfm_schema_period}
+	\caption{Блок-схема DAQ Frequency Meter. Обработка периода}\label{img:dfm_schema_period}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dfm_schema_read}
+	\caption{Блок-схема DAQ Frequency Meter. Чтение}\label{img:dfm_schema_read}
+\end{figure}
 
 \subsection{ВП протоколирования результатов}
 
-% same
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dfm_scaner_vi}
+	\caption{Передняя панель протоколирования для DAQ Frequency Meter}\label{img:dfm_scaner_vi}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{image/dfm_scanner_schema}
+	\caption{Блок-схема протоколирования для DAQ Frequency Meter}\label{img:dfm_scanner_schema}
+\end{figure}
 
 \section{ПОРЯДОК ВЫПОЛНЕНИЯ РАБОТЫ}
 \begin{enumerate}
@@ -66,11 +130,179 @@
 
 \subsection{Результаты сбора данных}
 
-% Таблица 1 с измеренными значениями, сохранёнными в текстовом файле при выполнении ЛР 08, упр.3. Обоснование связи полученных амплитудного и среднеквадратичного значений
+\begin{table}[H]
+	\centering
+	\caption{Результаты Data acquisition and analysis}
+	\label{tab:daa}
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		Амплитуда, В & Частота, Гц & Кнли     & peak     & RMS      \\ \hline
+		2,116329     & 110,782777  & 0,017806 & 2,096112 & 1,493919 \\ \hline
+		2,116331     & 110,780089  & 0,017706 & 2,094815 & 1,500738 \\ \hline
+		2,116586     & 110,780983  & 0,017725 & 2,091895 & 1,498371 \\ \hline
+		2,116324     & 110,784142  & 0,017770 & 2,098058 & 1,501008 \\ \hline
+		2,115589     & 110,783335  & 0,017731 & 2,096437 & 1,497431 \\ \hline
+		2,116457     & 110,782877  & 0,017777 & 2,076650 & 1,495899 \\ \hline
+		2,116525     & 110,782302  & 0,017794 & 2,100005 & 1,501362 \\ \hline
+		2,116631     & 110,780192  & 0,017743 & 2,110060 & 1,491992 \\ \hline
+		2,116387     & 110,783203  & 0,017763 & 2,106168 & 1,500619 \\ \hline
+		2,116344     & 110,778854  & 0,017759 & 2,109736 & 1,501248 \\ \hline
+	\end{tabular}
+\end{table}
+% Обоснование связи полученных амплитудного и среднеквадратичного значений
 
 \subsection{Результаты измерения частоты и периода}
 
-% Таблицы с измеренными значениями, сохранёнными в текстовом файле при выполнении задания ЛР 09 . Если задание не выполнялась, привести короткую таблицу, заполненную по данным со скриншотов
+\begin{longtable}[c]{|c|c|c|}
+	\caption{Результаты измерения частоты в зависимости от позиции ручки регулятора}
+	\label{tab:dfm_freq}\\
+	\hline
+	Frequency max, Hz & Frequency middle, Hz & Frequency min, Hz \\ \hline
+	\endfirsthead
+	%
+	\endhead
+	%
+	9990.009990       & 205.689368           & 109.552874        \\ \hline
+	9990.009990       & 205.689368           & 109.563226        \\ \hline
+	9991.257650       & 205.688839           & 109.566828        \\ \hline
+	9992.505621       & 205.686195           & 109.557224        \\ \hline
+	9990.009990       & 205.690426           & 109.554824        \\ \hline
+	9990.009990       & 205.670860           & 109.584838        \\ \hline
+	9990.009990       & 205.680907           & 109.560975        \\ \hline
+	9991.257650       & 205.687253           & 109.564577        \\ \hline
+	9990.009990       & 205.703648           & 109.556774        \\ \hline
+	9990.009990       & 205.690426           & 109.575682        \\ \hline
+	9991.257650       & 205.683551           & 109.563826        \\ \hline
+	9990.009990       & 205.684608           & 109.555124        \\ \hline
+	9991.257650       & 205.674032           & 109.555874        \\ \hline
+	9990.009990       & 205.683022           & 109.561276        \\ \hline
+	9988.762642       & 205.693599           & 109.555424        \\ \hline
+	9988.762642       & 205.667159           & 109.575382        \\ \hline
+	9990.009990       & 205.687781           & 109.557825        \\ \hline
+	9990.009990       & 205.654998           & 109.569829        \\ \hline
+	9990.009990       & 205.661871           & 109.563226        \\ \hline
+	9990.009990       & 205.707350           & 109.538923        \\ \hline
+	9990.009990       & 205.688310           & 109.566677        \\ \hline
+	9990.009990       & 205.680378           & 109.550323        \\ \hline
+	9990.009990       & 205.659756           & 109.571330        \\ \hline
+	9990.009990       & 205.681435           & 109.530825        \\ \hline
+	9988.762642       & 205.695714           & 109.552574        \\ \hline
+	9991.257650       & 205.679320           & 109.572530        \\ \hline
+	9990.009990       & 205.692541           & 109.562776        \\ \hline
+	9991.257650       & 205.695185           & 109.582286        \\ \hline
+	9991.257650       & 205.677734           & 109.544773        \\ \hline
+	9988.762642       & 205.690954           & 109.558725        \\ \hline
+	9988.762642       & 205.696243           & 109.522577        \\ \hline
+	9988.762642       & 205.650240           & 109.521978        \\ \hline
+	9990.009990       & 205.619583           & 109.558575        \\ \hline
+	9988.762642       & 205.696243           & 109.541323        \\ \hline
+	9990.009990       & 205.680907           & 109.554224        \\ \hline
+	9988.762642       & 205.679849           & 109.577483        \\ \hline
+	9990.009990       & 205.698359           & 109.564727        \\ \hline
+	9988.762642       & 205.688310           & 109.544323        \\ \hline
+	9990.009990       & 205.660285           & 109.528425        \\ \hline
+	9990.009990       & 205.686724           & 109.548973        \\ \hline
+	9990.009990       & 205.725865           & 109.545523        \\ \hline
+	9988.762642       & 205.684080           & 109.557525        \\ \hline
+	9988.762642       & 205.676147           & 109.551523        \\ \hline
+	9988.762642       & 205.710524           & 109.546723        \\ \hline
+	9991.257650       & 205.717930           & 109.555874        \\ \hline
+	9990.009990       & 205.649712           & 109.515531        \\ \hline
+	9990.009990       & 205.669802           & 109.526926        \\ \hline
+	9990.009990       & 205.682493           & 109.548673        \\ \hline
+	9987.515605       & 205.669274           & 109.525576        \\ \hline
+	9988.762642       & 205.671917           & 109.536674        \\ \hline
+	9990.009990       & 205.665044           & 109.565477        \\ \hline
+	9990.009990       & 205.669274           & 109.573281        \\ \hline
+	9988.762642       & 205.702590           & 109.556024        \\ \hline
+	9990.009990       & 205.638082           & 109.547623        \\ \hline
+	9990.009990       & 205.686724           & 109.550923        \\ \hline
+	9990.009990       & 205.711582           & 109.565027        \\ \hline
+	9988.762642       & 205.665044           & 109.551974        \\ \hline
+	9987.515605       & 205.679320           & 109.539373        \\ \hline
+	9988.762642       & 205.711582           & 109.537273        \\ \hline
+	9988.762642       & 205.681435           & 109.542823        \\ \hline
+	9988.762642       & 205.660814           & 109.530375        \\ \hline
+	9988.762642       & 205.676676           & 109.548523        \\ \hline
+	9988.762642       & 205.677205           & 109.557224        \\ \hline
+	9988.762642       & 205.674032           & 109.542523        \\ \hline
+	9990.009990       & 205.673504           & 109.536974        \\ \hline
+	9990.009990       & 205.690426           & 109.542073        \\ \hline
+	9990.009990       & 205.698888           & 109.533524        \\ \hline
+	9990.009990       & 205.675619           & 109.553024        \\ \hline
+	9988.762642       & 205.700474           & 109.573431        \\ \hline
+	9987.515605       & 205.704177           & 109.489601        \\ \hline
+	9990.009990       & 205.692541           & 109.535474        \\ \hline
+	9990.009990       & 205.689897           & 109.533374        \\ \hline
+	9990.009990       & 205.684608           & 109.528875        \\ \hline
+	9988.762642       & 205.713169           & 109.531724        \\ \hline
+	9988.762642       & 205.659228           & 109.535624        \\ \hline
+	9987.515605       & 205.724807           & 109.548523        \\ \hline
+	9990.009990       & 205.714227           & 109.530375        \\ \hline
+	9988.762642       & 205.706821           & 109.555424        \\ \hline
+	9988.762642       & 205.709995           & 109.536524        \\ \hline
+	9988.762642       & 205.709466           & 109.543273        \\ \hline
+	9988.762642       & 205.706293           & 109.544923        \\ \hline
+	9988.762642       & 205.697301           & 109.541773        \\ \hline
+	9990.009990       & 205.663986           & 109.541923        \\ \hline
+	9988.762642       & 205.717401           & 109.554074        \\ \hline
+	9988.762642       & 205.690954           & 109.550623        \\ \hline
+	9987.515605       & 205.696772           & 109.541773        \\ \hline
+	9988.762642       & 205.709995           & 109.529025        \\ \hline
+	9988.762642       & 205.706293           & 109.541173        \\ \hline
+	9988.762642       & 205.722162           & 109.530225        \\ \hline
+	9988.762642       & 205.674032           & 109.517180        \\ \hline
+	9987.515605       & 205.704706           & 109.557975        \\ \hline
+	9987.515605       & 205.701532           & 109.537573        \\ \hline
+	9987.515605       & 205.686724           & 109.537273        \\ \hline
+	9990.009990       & 205.702590           & 109.544023        \\ \hline
+	9990.009990       & 205.712111           & 109.537723        \\ \hline
+	9988.762642       & 205.691483           & 109.548973        \\ \hline
+	9988.762642       & 205.702590           & 109.541623        \\ \hline
+	9988.762642       & 205.712111           & 109.530975        \\ \hline
+	9988.762642       & 205.716343           & 109.528425        \\ \hline
+	9988.762642       & 205.697301           & 109.541923        \\ \hline
+\end{longtable}
+
+\begin{table}[H]
+	\centering
+	\caption{Результат измерения частоты}
+	\label{tab:dfm_scan_freq}
+	\begin{tabular}{|c|}
+		\hline
+		Frequency, Hz \\ \hline
+		 109.557224   \\ \hline
+		 109.563976   \\ \hline
+		 109.560375   \\ \hline
+		 109.546573   \\ \hline
+		 109.550623   \\ \hline
+		 109.550173   \\ \hline
+		 109.572680   \\ \hline
+		 109.540273   \\ \hline
+		 109.559625   \\ \hline
+		 109.566227   \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{Результат измерения периода}
+	\label{tab:dfm_scan_period}
+	\begin{tabular}{|c|}
+		\hline
+		Period, s \\ \hline
+		0.009130  \\ \hline
+		0.009130  \\ \hline
+		0.009120  \\ \hline
+		0.009120  \\ \hline
+		0.009130  \\ \hline
+		0.009120  \\ \hline
+		0.009130  \\ \hline
+		0.009130  \\ \hline
+		0.009130  \\ \hline
+		0.009130  \\ \hline
+	\end{tabular}
+\end{table}
 
 \section{ВЫВОДЫ ПО РАБОТЕ}
 
